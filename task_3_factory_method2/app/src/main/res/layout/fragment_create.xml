@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16sp"
+    tools:context=".CreateFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:fontFamily="monospace"
+        android:text="Create a delivery order here!"
+        android:textAlignment="center"
+
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginTop="150dp"
+        android:fontFamily="monospace"
+        android:text="Destination:"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/rgCountries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/rbBelarus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Belarus"
+            android:textAlignment="textStart" />
+
+        <RadioButton
+            android:id="@+id/rbRussia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Russia"
+            android:textAlignment="textStart" />
+
+
+        <RadioButton
+            android:id="@+id/rbUSA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="USA"
+            android:textAlignment="textStart" />
+
+        <RadioButton
+            android:id="@+id/rbGermany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Germany"
+            android:textAlignment="textStart" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="DESCRIPTION"
+        app:layout_constraintBottom_toBottomOf="@+id/etCargoName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etCargoName"
+        app:layout_constraintTop_toTopOf="@+id/etCargoName" />
+
+    <EditText
+        android:id="@+id/etCargoName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="CARGO NAME"
+        android:layout_marginTop="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/etDescription"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgGermanyCargoTypes" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:text="CREATE"
+
+
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCargoName"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
+
+    <TextView
+        android:id="@+id/tvGermanyTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="monospace"
+        android:text="Select cargo type:"
+        android:textSize="23sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgCountries" />
+
+    <RadioGroup
+        android:id="@+id/rgGermanyCargoTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tvGermanyTypes"
+        app:layout_constraintTop_toBottomOf="@+id/tvGermanyTypes">
+
+        <RadioButton
+            android:id="@+id/rbPassengers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Passengers" />
+
+        <RadioButton
+            android:id="@+id/rbGoods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goods" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

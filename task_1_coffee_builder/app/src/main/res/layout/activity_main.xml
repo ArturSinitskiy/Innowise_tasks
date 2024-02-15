@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="45dp"
+    android:background="@color/activityBackground"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Make your coffee!"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCoffeeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Coffee name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/cbIsDouble"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <CheckBox
+        android:id="@+id/cbIsDouble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Double coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etCoffeeName"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <EditText
+        android:id="@+id/etMilk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Milk (ml)"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/cbIsDouble"
+        app:layout_constraintStart_toEndOf="@+id/etCoffeeName"
+        app:layout_constraintTop_toBottomOf="@+id/cbIsDouble" />
+
+    <EditText
+        android:id="@+id/etCream"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Cream (ml)"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/etMilk"
+        app:layout_constraintStart_toStartOf="@+id/etSugar"
+        app:layout_constraintTop_toBottomOf="@+id/etSugar" />
+
+    <EditText
+        android:id="@+id/etSugar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Sugar (spoons)"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/etCoffeeName"
+        app:layout_constraintStart_toStartOf="@+id/etCoffeeName"
+        app:layout_constraintTop_toBottomOf="@+id/etCoffeeName" />
+
+    <EditText
+        android:id="@+id/etCinnamon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Cinnamon (g)"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/etCream"
+        app:layout_constraintStart_toStartOf="@+id/etCream"
+        app:layout_constraintTop_toBottomOf="@+id/etCream" />
+
+    <EditText
+        android:id="@+id/etSyrup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:hint="Syrup (ml)"
+        android:textSize="20sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/etMilk"
+        app:layout_constraintStart_toStartOf="@+id/etMilk"
+        app:layout_constraintTop_toBottomOf="@+id/etMilk" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="315dp" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CREATE"
+        android:textColor="@color/activityBackground"
+        app:cornerRadius="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/etSyrup"
+        app:layout_constraintStart_toEndOf="@+id/etCinnamon"
+        app:layout_constraintTop_toBottomOf="@+id/etSyrup"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
