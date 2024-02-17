@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Task_5_observer" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">#232323</item>
+    </style>
+
+    <style name="Theme.Task_5_observer" parent="Base.Theme.Task_5_observer" />
+</resources>
