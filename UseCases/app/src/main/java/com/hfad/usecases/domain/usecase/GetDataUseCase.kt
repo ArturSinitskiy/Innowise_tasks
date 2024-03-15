@@ -2,9 +2,10 @@ package com.hfad.usecases.domain.usecase
 
 import android.widget.Toast
 import com.hfad.usecases.domain.models.Data
+import com.hfad.usecases.domain.repository.DataRepository
 
-class GetDataUseCase {
+class GetDataUseCase(private val dataRepository: DataRepository) {
     fun execute(): Data {
-        return Data.getInstance()
+        return dataRepository.getData()
     }
 }

@@ -4,19 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.hfad.usecases.R
+import com.hfad.usecases.data.repository.DataRepositoryImplementation
 import com.hfad.usecases.databinding.ActivityMainBinding
 import com.hfad.usecases.domain.models.Data
 import com.hfad.usecases.domain.models.SaveData
+import com.hfad.usecases.domain.repository.DataRepository
 import com.hfad.usecases.domain.usecase.GetDataUseCase
 import com.hfad.usecases.domain.usecase.SaveDataUseCase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val data = Data.getInstance()
 
-    private val getDataUseCase = GetDataUseCase()
-    private val saveDataUseCase = SaveDataUseCase()
+    private val dataRepository by lazy { DataRepositoryImplementation(this)}
+    private val getDataUseCase by lazy { GetDataUseCase(dataRepository)}
+    private val saveDataUseCase by lazy { SaveDataUseCase(dataRepository)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSaveData.setOnClickListener {
             val saveData = SaveData(binding.etNewData.text.toString())
-            saveDataUseCase.execute(saveData)
+            if (saveData.dataEntries.isNotEmpty()) {
+                saveDataUseCase.execute(saveData)
+            }
         }
     }
 }
