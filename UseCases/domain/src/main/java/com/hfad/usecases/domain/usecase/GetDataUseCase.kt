@@ -1,6 +1,5 @@
 package com.hfad.usecases.domain.usecase
 
-import android.widget.Toast
 import com.hfad.usecases.domain.models.Data
 import com.hfad.usecases.domain.repository.DataRepository
 

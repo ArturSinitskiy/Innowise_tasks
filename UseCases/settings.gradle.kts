@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Use Cases"
 include(":app")
- 
+include(":domain")
+include(":data")

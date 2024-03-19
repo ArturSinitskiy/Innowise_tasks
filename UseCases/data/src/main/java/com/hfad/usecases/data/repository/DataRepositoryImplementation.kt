@@ -7,14 +7,15 @@ import com.hfad.usecases.domain.models.Data
 import com.hfad.usecases.domain.models.SaveData
 import com.hfad.usecases.domain.repository.DataRepository
 
-class DataRepositoryImplementation(private val dataStorage: DataStorage) : DataRepository {
-    override fun saveData(data: SaveData) {
+class DataRepositoryImplementation(private val dataStorage: DataStorage) :
+    com.hfad.usecases.domain.repository.DataRepository {
+    override fun saveData(data: com.hfad.usecases.domain.models.SaveData) {
         val storageData = StorageData(data.dataEntries)
         dataStorage.save(storageData)
     }
 
-    override fun getData(): Data {
+    override fun getData(): com.hfad.usecases.domain.models.Data {
         val storageData = dataStorage.get()
-        return Data(storageData.dataEntries)
+        return com.hfad.usecases.domain.models.Data(storageData.dataEntries)
     }
 }
